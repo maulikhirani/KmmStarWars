@@ -49,4 +49,6 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: output/Build/Products/Debug-iphonesimulator/iosApp.app
-          asset_name: iosApp.app 
+          asset_name: iosApp.app
+          asset_content_type: application/octet-stream
+      

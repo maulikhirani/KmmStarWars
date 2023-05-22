@@ -25,7 +25,7 @@ jobs:
       - name: Xcodebuild Action
         uses: sersoft-gmbh/xcodebuild-action@v2.0.1
         with:
-          workspace: iosApp.xcworkspace
+          workspace: iosApp/iosApp.xcworkspace
           scheme: iosApp
           sdk: iphonesimulator
           derived-data-path: ./output

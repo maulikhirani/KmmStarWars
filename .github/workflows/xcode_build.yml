@@ -31,6 +31,12 @@ jobs:
           derived-data-path: ./output
           action: build
           
+      - name: Zip iosApp
+        uses: vimtor/action-zip@v1
+        with:
+          files: output/Build/Products/Debug-iphonesimulator/iosApp.app
+          dest: iosApp.zip
+          
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -48,7 +54,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: output/Build/Products/Debug-iphonesimulator/iosApp.app
-          asset_name: iosApp.app
-          asset_content_type: application/octet-stream
+          asset_path: iosApp.zip
+          asset_name: iosApp.zip
+          asset_content_type: application/zip
       

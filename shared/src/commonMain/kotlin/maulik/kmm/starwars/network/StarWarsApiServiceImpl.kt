@@ -10,7 +10,7 @@ class StarWarsApiServiceImpl(
 ) : StarWarsApiService {
     override suspend fun getStarWarsCharacter(pageNo: Int): StarWarsApiResponse {
         return httpClient
-            .get("https://swapi.py4e.com/api/people?page=$pageNo")
+            .get("https://swapi.dev/api/people?page=$pageNo")
             .body()
     }
 }

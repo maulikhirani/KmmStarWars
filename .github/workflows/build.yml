@@ -29,7 +29,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
           name: app-release.apk
-          path: app/build/outputs/apk/release/app-release.apk
+          path: androidApp/build/outputs/apk/release/androidApp-release.apk
   
   build_ios:
     name: Build iOS .app for Simulator

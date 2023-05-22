@@ -1,0 +1,51 @@
+name: Xcode - Build
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    name: Build .app file that can run on Simulator
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: ./iosApp
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+        
+      - name: setup jdk
+        uses: actions/setup-java@v3
+        with:
+           java-version: '17'
+           distribution: 'oracle'
+           
+      - name: Xcodebuild Action
+        uses: sersoft-gmbh/xcodebuild-action@v2.0.1
+        with:
+          workspace: iosApp.xcworkspace
+          scheme: iosApp
+          sdk: iphonesimulator
+          derived-data-path: ./output
+          
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          draft: true
+          prerelease: false
+          
+      - name: Upload app
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: output/Build/Products/Debug-iphonesimulator/iosApp.app
+          asset_name: iosApp.app 

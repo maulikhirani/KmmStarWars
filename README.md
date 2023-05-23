@@ -1,5 +1,7 @@
 # KMM StarWars
 
+![Banner](https://github.com/maulikhirani/KmmStarWars/assets/25861055/af58ae9e-f3db-42db-806e-18617347ce7f)
+
 KMM StarWars is a multiplatform version of [Compose StarWars][1] which demonstrates the aspects of [Kotlin Multiplatform Mobile][2]. The core business logic is written once, only the UI is built using native UI tools on both platforms. Android uses Jetpack Compose and iOS uses SwiftUI for design.
 
 ## What does the app look like?

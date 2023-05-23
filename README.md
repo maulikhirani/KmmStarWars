@@ -38,6 +38,9 @@ Multiplatform Paging acts as a shared pagination logic, it delegates to [Android
 |[Lottie with SwiftUI][14]|Animated loading indicator|
 |[Multiplatform Paging with SwiftUI][15]|Loading the list with pagination|
 
+## Looking for trying out the app yourself?
+Visit [Releases](https://github.com/maulikhirani/KmmStarWars/releases) where you'll find APK for android and .app file for iOS which can run on iOS simulator (not on physical device).
+
 [1]: https://github.com/maulikhirani/ComposeStarWars
 [2]: https://kotlinlang.org/docs/multiplatform-mobile-getting-started.html
 [3]: https://ktor.io/docs/getting-started-ktor-client-multiplatform-mobile.html#coroutines
